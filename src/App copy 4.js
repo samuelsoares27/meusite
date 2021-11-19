@@ -9,6 +9,16 @@ export default class App extends Component{
         };
     }
 
+    componentDidMount() {
+        setInterval(() => {
+            this.setState({hora: new Date().toLocaleTimeString()})
+        }, 1000);
+    }
+
+    componentDidUpdate() {
+        console.log(this.state.hora);
+    }
+
     render() {
         return (
             <div>
